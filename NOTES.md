@@ -8,6 +8,7 @@
 - **Intent is not a false positive.** A public bucket on purpose is a true finding with an accepted risk. Keeping these apart keeps the false-positive rate honest and the risk register complete.
 - **Do not test secrets.** Trying a credential is an access attempt. Use the tool's validity check only if the owner authorized it.
 - **LLM triage works best with structure.** Research such as ZeroFalse reports that giving the model flow traces and CWE-specific guidance beats generic prompts. Semgrep reports users agree with its assistant's triage more than 96% of the time, which still leaves errors a human must catch.
+- **Write refutation reasons that compare.** Rule samples are judged by shared reasons. "Safe" cannot be counted; `sanitizer not modeled: escapeHtml` can.
 
 ## Areas for improvement
 
@@ -24,3 +25,4 @@
 - [ZeroFalse (arXiv 2510.02534)](https://arxiv.org/abs/2510.02534): LLM adjudication of static-analysis alerts with traces and CWE knowledge.
 - [Semgrep: Assistant triage results](https://semgrep.dev/blog/2025/semgrep-is-confidently-handling-60-of-all-triage-for-users-without-reducing-coverage/).
 - [Checkov: suppressing and skipping policies](https://www.checkov.io/2.Basics/Suppressing%20and%20Skipping%20Policies.html): intent recorded as a justified skip.
+- [Semgrep: reduce false positives](https://docs.semgrep.dev/kb/semgrep-code/reduce-false-positives): fork or remove noisy rules.
